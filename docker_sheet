@@ -1,0 +1,88 @@
+============================================================================================================================================================
+
+Docker Terminology:
+Images - The blueprints of our application which form the basis of containers.
+Containers - Created from Docker images and run the actual application.
+Docker Daemon - The background service running on the host that manages building, running and distributing Docker containers. The daemon is the process that
+        runs in the operating system to which clients talk to.
+Docker Client - The command line tool that allows the user to interact with the daemon.
+Docker Hub - A registry of Docker images. You can think of the registry as a directory of all available Docker images. If required, one can host their own
+        Docker registries and can use them for pulling images.
+
+============================================================================================================================================================
+
+Docker commands flags:
+run:
+  --rm    [removes container upon exit]
+  -d      [detaches terminal]
+  -P      [publish exposed ports to random ones]
+  --name  [gives a name to a container]
+  -p      [assign port to a container through which connections will be forwarded to]
+
+build:
+  -t      [create a tag name for a docker image]
+
+docker-compose:
+  -d      [run in detached mode]
+  -f      [assign different .yml files to run with]
+
+down:
+  -v      [bring down all volumes]
+
+============================================================================================================================================================
+
+Docker Commands:
+# Run a hello world to test docker installation
+    $ docker run hello-world
+
+# Pull a Docker image from the Docker registry
+    $ docker pull [image-name]
+
+# List all local Docker images
+    $ docker images
+
+# Run a Docker container
+    $ docker run [image-name] [command]...
+
+# List all current running containers
+    $ docker ps
+# List all containers regardless of status
+    $ docker ps -a
+
+# Run a Docker container with an interactive shell
+    $ docker run -it [image-name] sh
+
+# Remove a Docker container
+    $ docker rm [container id] [container id]...
+or  $ docker container prune
+or  $ docker volume prune                         - Remove all unused local volumes
+or  $ docker system prune -a                      - Remove all unused containers, networks, images, and optionally volumes
+# Remove all containers
+    $ docker rm $(docker ps -a -q -f status=exited)
+
+# List container ports
+    $ docker port [container-name]
+
+# Stop a detached container
+    $ docker stop [container-name] [container-source]
+
+# Build a docker image from a Dockerfile from your current directory
+    $ docker build -t [tag-name] .
+
+# Create a Docker network
+    $ docker network create [network-name]
+
+# Run a docker container with an assigned network
+    $ docker run -d --name [container-name] --net [network-name] -p [out-facing-port:server-port]... -e [discovery-type/number of nodes] [container-name]
+
+# Run Docker container with an assigned network
+    $ docker run -d --net [network-name] -p [out-facing-port:server-port] --name [container name] [container-source]
+
+# Test Docker Compose installation
+    $ docker-compose --version
+
+# Execute docker-compose.yml file
+    $ docker-compose up
+
+# Destroy Docker cluster and volumes
+    $ docker-compose down -v
