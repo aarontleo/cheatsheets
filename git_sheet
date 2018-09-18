@@ -49,6 +49,7 @@ Use editor to solve conflicts and mark file:		git add <resolved-file>
 																								git rm <resolved-file>
 ===========================================================================
 
+<<<<<<< HEAD
 == Undo
 Discard local changes in working dir:						git reset --hard HEAD
 Discard local changes in a specific file:				git checkout HEAD <filename>
@@ -57,3 +58,12 @@ Reset HEAD to a prev commit, discard changes:		git reset --hard <commit>
 	preserve changes as unstaged:									git reset <commit>
 	preserve uncommitted local changes:						git reset --keep <commit>
 ===========================================================================
+=======
+*** Undo *******************************************************************
+Discard local changes in working dir:		git reset --hard HEAD
+Discard local changes in a specific file:	git checkout HEAD <filename>
+Revert a commit:				git revert <commit>
+Reset HEAD to a prev commit, discard changes:	git reset --hard <commit>
+	preserve changes as unstaged:		git reset <commit>
+	preserve uncommitted local changes:	git reset --keep <commit>
+>>>>>>> f802d3aefdf468620760d48cab6d49f354ea6b25
