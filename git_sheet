@@ -1,69 +1,60 @@
 == Create a repository
-Clone existing:															git clone [remote repo url]
-Create new local repo:											git init
+Clone existing:					git clone [remote repo url]
+Create new local repo:				git init
 ===========================================================================
 
 == Local Changes
-Displays changed files in dir:							git status
-Displays changes to tracked files:					git diff
-Add all current changes to next commit:			git add .
-Add some changes:														git add -p <filename>
+Displays changed files in dir:			git status
+Displays changes to tracked files:		git diff
+Add all current changes to next commit:		git add .
+Add some changes:				git add -p <filename>
 Commit all local changes in tracked files:	git commit -a
-Commit previously staged changes:						git commit
-Change last commit:													git commit --amend
+Commit previously staged changes:		git commit
+Change last commit:				git commit --amend
 ===========================================================================
 
 == Commit History
-Show all commits:														git log
-Show specific file changes:									git log -p <filename>
-Show who made changes to a file:						git blame <filename>
+Show all commits:				git log
+Show specific file changes:			git log -p <filename>
+Show who made changes to a file:		git blame <filename>
 ===========================================================================
 
 == Branches and Tags
-List all exisiting branches:								git branch -av
-Switch HEAD branch:													git checkout <branch name>
-Create new branch based on current HEAD:		git branch <new branch name>
+List all exisiting branches:			git branch -av
+Switch HEAD branch:				git checkout <branch name>
+Create new branch based on current HEAD:	git branch <new branch name>
 Create new tracking branch based on remote:	git checkout --track <remote branch name>
-Delete local branch:												git branch -d <branch>
-Mark current commit with a tag:							git tag <tag name>
+Delete local branch:				git branch -d <branch>
+Mark current commit with a tag:			git tag <tag name>
 ===========================================================================
 
 == Update and Publish
-List all current remotes:												git remote -v
-Information about a remote:											git remote show <remote>
-Add new remote repo, named <remote>:						git remote add <shortname> <url>
+List all current remotes:			git remote -v
+Information about a remote:			git remote show <remote>
+Add new remote repo, named <remote>:		git remote add <shortname> <url>
 Download changes from <remote>, not into HEAD:	git fetch <remote>
-Download cahnges from remote into HEAD:					git pull <remote> <branch>
-Publish local changes on a remote:							git push <remote> <branch>
-Delete branch on a remote:											git branch -dr <remote/branch>
+Download cahnges from remote into HEAD:		git pull <remote> <branch>
+Publish local changes on a remote:		git push <remote> <branch>
+Delete branch on a remote:			git branch -dr <remote/branch>
 Publish tags:																		git push --tags
 ===========================================================================
 
 == Merge and Rebase
-Merge a branch into current HEAD:								git merge <branch>
-Rebase current HEAD onto a branch:							git rebase <branch>
-Abort rebase:																		git rebase --abort
-Continue a rebase after resolving conflicts:		git rebase --continue
+Merge a branch into current HEAD:		git merge <branch>
+Rebase current HEAD onto a branch:		git rebase <branch>
+Abort rebase:					git rebase --abort
+Continue a rebase after resolving conflicts:	git rebase --continue
 Use configured merge tool to resolve conflicts:	git mergetool
-Use editor to solve conflicts and mark file:		git add <resolved-file>
+Use editor to solve conflicts and mark file:	git add <resolved-file>
 																								git rm <resolved-file>
 ===========================================================================
 
-<<<<<<< HEAD
+
 == Undo
-Discard local changes in working dir:						git reset --hard HEAD
-Discard local changes in a specific file:				git checkout HEAD <filename>
-Revert a commit:																git revert <commit>
-Reset HEAD to a prev commit, discard changes:		git reset --hard <commit>
-	preserve changes as unstaged:									git reset <commit>
-	preserve uncommitted local changes:						git reset --keep <commit>
-===========================================================================
-=======
-*** Undo *******************************************************************
 Discard local changes in working dir:		git reset --hard HEAD
 Discard local changes in a specific file:	git checkout HEAD <filename>
 Revert a commit:				git revert <commit>
 Reset HEAD to a prev commit, discard changes:	git reset --hard <commit>
 	preserve changes as unstaged:		git reset <commit>
 	preserve uncommitted local changes:	git reset --keep <commit>
->>>>>>> f802d3aefdf468620760d48cab6d49f354ea6b25
+===========================================================================
